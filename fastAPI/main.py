@@ -72,6 +72,9 @@ c12 = Caballero(id=12, nombre="Afrodita", constelacion="Piscis", cosmos=98)
 caballeros: list[Caballero] = [
     c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12
 ]
+@app.get("/onecaballero/")
+def show_one_caballero(i:int):
+    return caballeros[i-1]
 
 @app.get("/newCaballeros/") 
 def show_new_caballeros(inicio:int=0, fin:int=12):
